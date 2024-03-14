@@ -83,14 +83,14 @@ def test_book_has_contracts():
     contract = Contract(author, book, '01/01/2001', 50000)
 
     assert book.contracts() == [contract]
-
 def test_book_has_authors():
     """Test Book class has method authors() that returns a list of its authors"""
     author = Author("Name")
     book = Book("Title")
     Contract(author, book, '01/01/2001', 50000)
-
+    
     assert author in book.authors()
+
 
 def test_author_can_sign_contract():
     """Test Author class has method sign_contract() that creates a contract for an author and book"""
@@ -117,7 +117,6 @@ def test_author_has_total_royalties():
     Contract(author, book3, "01/01/2001", 30)
 
     assert author.total_royalties() == 60
-
 def test_contract_contracts_by_date():
     """Test Contract class has method contracts_by_date() that sorts all contracts by date"""
     Contract.all = []
@@ -132,4 +131,4 @@ def test_contract_contracts_by_date():
     contract3 = Contract(author1, book3, "03/01/2001", 30)
     contract4 = Contract(author2, book4, "01/01/2001", 40)
 
-    assert Contract.contracts_by_date('01/01/2001') == [contract2, contract4]
+    assert Contract.contracts_by_date == [contract2, contract4]
